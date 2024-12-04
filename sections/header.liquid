@@ -1,0 +1,40 @@
+<header class="site-header">
+  <div class="container">
+    {% if section.settings.logo %}
+      <a href="/" class="site-logo">
+        {{ section.settings.logo | image_url: width: section.settings.logo_width | image_tag }}
+      </a>
+    {% else %}
+      <a href="/" class="site-name">{{ shop.name }}</a>
+    {% endif %}
+    
+    <nav class="site-nav">
+      {% for link in linklists.main-menu.links %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 250,
+      "step": 10,
+      "unit": "px",
+      "label": "Logo width",
+      "default": 100
+    }
+  ]
+}
+{% endschema %} 

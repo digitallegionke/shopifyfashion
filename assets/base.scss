@@ -1,0 +1,39 @@
+/* Variables */
+:root {
+  --primary-color: {{ settings.primary_color }};
+  --secondary-color: {{ settings.secondary_color }};
+  
+  /* Typography */
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
+  --font-heading: var(--font-body);
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base Styles */
+body {
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Components */
+.site-header {
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.site-nav {
+  display: flex;
+  gap: 20px;
+} 
